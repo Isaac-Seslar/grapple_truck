@@ -8,11 +8,14 @@ radius = 38.0
 height = 118.0
 
 [node name="car" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_qt2eu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
 scale = Vector2(0.59375, 0.921875)
 texture = ExtResource("1_c35m8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
 shape = SubResource("CapsuleShape2D_qt2eu")
