@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cc8jiqyobudt3"]
+
+[ext_resource type="Texture2D" uid="uid://bhq1b712lh60d" path="res://icon.svg" id="1_8ivgs"]
+[ext_resource type="Script" uid="uid://de8yr05s8ysv5" path="res://scripts/truck.gd" id="1_w5yki"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ivgs"]
+size = Vector2(128, 128)
+
+[node name="Truck" type="CharacterBody2D" unique_id=918917989]
+script = ExtResource("1_w5yki")
+
+[node name="TruckSprite" type="Sprite2D" parent="." unique_id=1868113649]
+texture = ExtResource("1_8ivgs")
+
+[node name="TruckCollisionShape" type="CollisionShape2D" parent="." unique_id=91437657]
+shape = SubResource("RectangleShape2D_8ivgs")
