@@ -21,7 +21,8 @@ func _process(delta: float) -> void:
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		velocity = velocity.slide(collision.get_normal())
+		#velocity = velocity.slide(collision.get_normal())
+		speed = 0
 
 	rotation += steer * turn_speed * steering_factor * delta
 	print(speed)
