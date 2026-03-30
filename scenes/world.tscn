@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b2nuoqprajkq2"]
+
+[ext_resource type="Texture2D" uid="uid://ch7jgh44ma3o5" path="res://assets/Backgrounds/RoadCarpet.webp" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://cc8jiqyobudt3" path="res://scenes/truck.tscn" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://crtoibgo5crwh" path="res://scripts/camera_script.gd" id="3_4wyf3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nnsk1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rwgxs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k0juu"]
+
+[node name="World" type="Node2D" unique_id=267151780]
+
+[node name="Roads" type="Sprite2D" parent="." unique_id=575194653]
+scale = Vector2(1.0648148, 1.1116837)
+texture = ExtResource("1_nnsk1")
+centered = false
+
+[node name="Truck" parent="." unique_id=1443663185 instance=ExtResource("2_rwgxs")]
+position = Vector2(565.00006, 428)
+scale = Vector2(0.175, 0.175)
+
+[node name="Camera2D" type="Camera2D" parent="Truck" unique_id=2095403451]
+zoom = Vector2(5.005, 5.005)
+script = ExtResource("3_4wyf3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=853120768]
+
+[node name="WestWall" type="CollisionShape2D" parent="StaticBody2D" unique_id=1656974116]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_nnsk1")
+
+[node name="NorthWall" type="CollisionShape2D" parent="StaticBody2D" unique_id=83931582]
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_rwgxs")
+
+[node name="EastWall" type="CollisionShape2D" parent="StaticBody2D" unique_id=542366149]
+position = Vector2(1150, 647)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_4wyf3")
+
+[node name="SouthWall" type="CollisionShape2D" parent="StaticBody2D" unique_id=116757330]
+position = Vector2(1150, 647)
+shape = SubResource("WorldBoundaryShape2D_k0juu")
